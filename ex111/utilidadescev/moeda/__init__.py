@@ -1,4 +1,4 @@
-from modulos.uteis import cab
+from ex111.utilidadescev.dado import cab
 
 
 #Função para mostrar o dobro de um valor
@@ -35,3 +35,4 @@ def resumo(n=0, aum=0, red=0):
     print(f'\033[1;32m{aum}%\033[m de aumento: {" "*15} \t{moedabr(aumentar(n, aum))}')
     print(f'\033[1;31m{red}%\033[m de redução: {" "*15} \t{moedabr(diminuir(n, red))}')
     cab("ENCERRADO")
+
