@@ -1,3 +1,8 @@
-import modulos.uteis
+from modulos.moeda import *
 
-modulos.uteis.cab('Criando Programa')
+
+cab("AVALIAÇÃO FINANCEIRA")
+espace()
+resumo(1000, 25, 50)
+espace()
+cab("PROGRAMA ENCERRADO")

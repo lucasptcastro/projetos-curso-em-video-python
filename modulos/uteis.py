@@ -6,4 +6,9 @@ def cab(txt):
 def espace():
     print(' ')
 
-espace()
+
+def msg(txt):
+    print(txt)
+
+
+msg("falaaa")

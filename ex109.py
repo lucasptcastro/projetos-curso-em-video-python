@@ -1,5 +1,5 @@
 from modulos.moeda import *
-from modulos.uteis import *
+
 
 cab('INFO MOEDA')
 n = float(input('▶ Informe a quantidade: R$'))
