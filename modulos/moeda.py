@@ -41,8 +41,8 @@ def moedabr(n, format=True):
 
 
 #Função para fazer um resumo sobre um valor
-def resumo(n=0, aum=0, red=0):
-    cab("Informações Financeiras")
+def resumo(n=0, aum=25, red=25):
+    cab("INFORMAÇÕES FINANCEIRAS")
     espace()
     print(f'Preço analisado: {" "*15 }\t{moedabr(n)}')
     print(f'Dobro do preço: {" "*15} \t{moedabr(dobro(n))}')
@@ -50,4 +50,20 @@ def resumo(n=0, aum=0, red=0):
     print(f'\033[1;32m{aum}%\033[m de aumento: {" "*15} \t{moedabr(aumentar(n, aum))}')
     print(f'\033[1;31m{red}%\033[m de redução: {" "*15} \t{moedabr(diminuir(n, red))}')
     espace()
+
+
+#Função para ler valores monetários e transformá-los em float
+def leiaDinheiro(txt):
+    while True:    
+        n = str(input(txt)).replace(',','.')
+        if n.isalpha():
+            print(f'\033[1;31m{n} é um valor inválido, tente novamente!\033[m')
+            continue
+        elif n.strip() == "":
+            print('\033[1;31mNenhum valor identificado, tente novamente!\033[m')
+            continue    
+        else:
+            return float(n)
+
+
 
