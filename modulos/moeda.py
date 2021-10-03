@@ -1,7 +1,7 @@
 #Função para mostrar um cabeçalho personalizado
-def cab(txt):
+def cab(txt, cor = 37, fundo = 41):
     print('\033[1;37m=\033[m'*50)
-    print(f'\033[1;37m|\033[m\033[1;37;41m{txt:^48}\033[m\033[1;37m|\033[m')
+    print(f'\033[1;37m|\033[m\033[1;{cor};{fundo}m{txt.center(48)}\033[m\033[1;37m|\033[m')
     print('\033[1;37m=\033[m'*50)
 
 

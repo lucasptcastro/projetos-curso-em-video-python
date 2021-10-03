@@ -10,5 +10,3 @@ def espace():
 def msg(txt):
     print(txt)
 
-
-msg("falaaa")
