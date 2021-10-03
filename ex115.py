@@ -1,5 +1,11 @@
 from ex115.modulos import *
-from time import sleep
+
+
+arq = 'testeee.txt'
+
+if not arquivoExiste(arq):
+    criarArquivo(arq)
+    
 
 while True:
     quest = menu(['Ver pessoas cadastradas', 'Cadastrar nova pessoa', 'Sair do sistema'])

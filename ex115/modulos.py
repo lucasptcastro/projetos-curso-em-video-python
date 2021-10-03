@@ -14,18 +14,21 @@ def amarelo(txt, fundo=40):
 def azul(txt, fundo=40):
     return f'\033[1;36;{fundo}m{txt}\033[m'
 
-#Interface
+#Cabeçalho
 def cab(txt, cor=37, fundo=41):
     print('\033[1;37m=\033[m'*50)
     print(f'\033[1;37m|\033[m\033[1;{cor};{fundo}m{txt.center(48)}\033[m\033[1;37m|\033[m')
     print('\033[1;37m=\033[m'*50)
 
+#Dar um espaço
 def espace():
     print(' ')
 
+#Mostrar uma linha
 def linha(i=50):
     print('='*i)
 
+#Interface
 def menu(lista):
     cab("INTERFACE PYTHON", cor=37, fundo=41)
     c = 1
@@ -49,4 +52,22 @@ def leiaInt(txt):
         else:
             return n
 
+def arquivoExiste(nome):
+    try:
+        a = open(nome, 'rt')
+        a.close()
+    except FileNotFoundError:
+        return False
+    else:
+        return True
 
+def criarArquivo(nome):
+    try:
+        a = open(nome, 'wt+')
+        a.close()
+    except:
+        print(vermelho('Houve um erro na criação do arquivo!'))
+    else:
+        print(f'Arquivo {azul(nome)} criado!')
+
+    
