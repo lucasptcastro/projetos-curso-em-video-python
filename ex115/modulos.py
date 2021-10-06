@@ -1,3 +1,5 @@
+from time import sleep
+
 #Cores
 def vermelho(txt, fundo=40):
     return f'\033[1;31;{fundo}m{txt}\033[m'
@@ -66,8 +68,33 @@ def criarArquivo(nome):
         a = open(nome, 'wt+')
         a.close()
     except:
-        print(vermelho('Houve um erro na criação do arquivo!'))
+        sleep(1)
+        print(vermelho('Houve um erro na criação do arquivo!'), flush=True)
     else:
-        print(f'Arquivo {azul(nome)} criado!')
+        sleep(1)
+        print(f'▶ Arquivo {azul(nome)} não existe! Criado com sucesso!', flush=True)
 
-    
+def lerArquivo(nome):
+    try:
+        a = open(nome, 'rt')
+    except:
+        print(vermelho('Houve um erro na leitura do arquivo!'))
+    else:
+        cab('PESSOAS CADASTRADAS:', 31, 47)
+        print(a.read())
+    finally:
+        a.close()
+
+def cadastro(arq, nome='Nulo', idade=0):
+    try:
+        a = open(arq, 'at')
+    except:
+        print(vermelho('Houve um erro ao abrir o arquivo!'))
+    else:
+        try:
+            a.write(f'{nome:<30}{idade:>3} anos\n')
+        except:
+            print(vermelho('Houve um erro ao adicionar as informações no arquivo!'))
+        else:
+            print(verde(f'Novo registro adicionado ao arquivo!'))
+            a.close()
